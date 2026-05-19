@@ -89,6 +89,8 @@ module "ecr" {
 
 module "vpc_peering" {
   source = "./modules/vpc_peering"
+  vpc_east_id = module.vpc.vpc_id
+  vpc_west_id = module.monitoring_vpc.vpc_id
 }
 
 module "sns" {

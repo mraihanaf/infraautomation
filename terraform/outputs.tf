@@ -91,3 +91,7 @@ output "ecr_api_url" {
 output "ecr_fe_url" {
   value = module.ecr.ecr_fe_url
 }
+
+output "ecr_analytics_url" {
+  value = module.ecr.ecr_analytics_url
+}

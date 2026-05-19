@@ -5,3 +5,7 @@ output "ecr_api_url" {
 output "ecr_fe_url" {
   value = aws_ecr_repository.fe.repository_url
 }
+
+output "ecr_analytics_url" {
+  value = aws_ecr_repository.analytics.repository_url
+}
