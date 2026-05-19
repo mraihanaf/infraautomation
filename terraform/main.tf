@@ -32,6 +32,12 @@ module "vpc" {
   availability_zones    = var.availability_zones
 }
 
+module "monitoring_vpc" {
+  source = "./modules/monitoring_vpc"
+  private_subnet_cidrs = ["10.1.1.0/24","10.1.2.0/24"]
+  availability_zones = ["us-west-2a", "us-west-2b"]
+}
+
 # ── 2. Security Groups — us-east-1 ───────────────────────
 module "security" {
   source = "./modules/security"
@@ -73,6 +79,22 @@ module "database" {
 module "s3" {
   source = "./modules/s3"
 
-  tfstate_bucket_name = "lks-tfstate-${var.student_name}-${substr(var.aws_account_id, -8, -1)}"
+  tfstate_bucket_name = "lks-tfstate-${var.student_name}-2026"
   assets_bucket_name  = "lks-app-assets-${var.student_name}-2026"
+}
+
+module "ecr" {
+  source = "./modules/ecr"
+}
+
+module "vpc_peering" {
+  source = "./modules/vpc_peering"
+}
+
+module "sns" {
+  source = "./modules/sns"
+}
+
+module "cloudwatch" {
+  source = "./modules/cloudwatch"
 }

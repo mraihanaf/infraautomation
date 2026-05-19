@@ -83,3 +83,11 @@ output "assets_bucket_name" {
   description = "S3 assets bucket name"
   value       = module.s3.assets_bucket_name
 }
+
+output "ecr_api_url" {
+  value = module.ecr.ecr_api_url
+}
+
+output "ecr_fe_url" {
+  value = module.ecr.ecr_fe_url
+}
