@@ -1,6 +1,6 @@
 # Project: Microservice Deployment with CI/CD & Inter-Region VPC Peering
 
-### Multi-Region Architecture
+### Multi-Region Architecture 
 
 ```
 us-east-1 (N. Virginia) — Application                us-west-2 (Oregon) — Monitoring
